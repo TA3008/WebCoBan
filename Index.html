@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gia dụng xanh HAT</title>
+
+    <style>
+        .Main{
+            font-size: 13px;
+            width: 1500px;
+            margin: 0 auto;
+            height: 3050px;
+        }
+        .Header{
+            height: 150px;
+        }
+        .Header-top{
+            background-color: red;
+            height: 100px;
+            width: 100%;
+            margin: 0px;
+        }
+        .Header-top img{
+            height: 100px;
+            width: 180px;
+            padding-left: 100px;
+            float: left;
+        }
+        .Header-top ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .Header-top ul li {
+            list-style: none;
+            float: left;
+            padding-left: 25px;
+            padding-top: 40px;
+            font-size: 20px;
+        }
+        .Header-top ul li a{
+            text-decoration: none;
+            color: white;
+        }
+        .Header-top ul li img{
+            height: 27px;
+            width: 27px;
+            padding-right: 1px;
+            vertical-align: middle;
+        }
+        .Header-bottom-width{
+            font-size: 13px;
+            width: 1500px;
+            margin: 0px auto;           
+        }
+        .Search{
+            height: 40px;
+            width: 550px;
+            background-color: white;
+            float: left;
+            margin-top: 30px;
+            border-radius: 6px;
+        }
+        .Search input{
+            height: 20px;
+            width: 480px;
+            background-color: white;
+            padding-top: 12px;
+            border: none;
+            border-radius: 6px;
+        }
+        .Search button{
+            height: 40px;
+            width: 45px;
+            float: right;
+            background-color: orange;
+            border-radius: 6px;
+        }
+        .Search button img{
+            height: 30px;
+            width: 30px;
+            float: right;
+        }       
+        .Header-bottom{
+            background-color: white;
+            height: 50px;
+        }
+        .Header-bottom ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .Header-bottom ul li{
+            list-style: none;
+            float: left;
+            padding-right: 40px;
+            line-height: 40px;
+        }
+        .Header-bottom ul li a:hover{
+            color: red;
+        }
+        .Header-bottom ul li a{
+            text-decoration: none;
+            display: block;
+            color: black;
+        }
+        .Header-bottom ul li a.active{
+            background-color: black;
+            font-size: 15px;
+            color: white;
+            padding-right: 20px;
+        }
+        .Header-bottom ul li img{
+            width: 20px;
+            height: 20px;
+            padding-right: 2px;
+            line-height: 0px;
+            vertical-align: middle;
+        }
+        .slideshow-container {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+        }
+        mySlides {
+            display: none;
+        } 
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        .active {
+            background-color: #717171;
+        }
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 3s;
+        }
+        .TieuDe{
+            width: 100%;
+            height: 40px;
+        }
+        .TieuDe p{
+            font-size: 23px;
+            font-weight: bold;
+            text-decoration: underline;
+            color: black;
+        }
+        .TieuDeLon p{
+            font-size: 25px;
+            font-weight: bold;
+            color: black;
+        }
+        .TieuDeLon img{
+            height: 30px;
+            width: 30px;
+            vertical-align: middle;
+        }
+        .MatHang-wrapper1{
+            height: 380px;
+            width: 100%;
+            text-align: center;
+            display: inline-block;
+            border: 0.5px solid #cccccc;
+        }
+        .MatHang-wrapper2{
+            height: 350px;
+            width: 100%;
+            text-align: center;
+            display: inline-block;
+            border: 0.5px solid #cccccc;
+        }
+        .MatHang-wrapper3{
+            height: 160px;
+            width: 100%;
+            text-align: center;
+            display: inline-block;
+            border: 0.5px solid #cccccc;
+        }
+        .MatHang{
+            float: left;
+            margin: 30px;
+            display: block;
+        }
+        .MatHang a p:hover{
+            color: orange;
+        }
+        .MatHang img{
+            height: 70px;
+            width: 70px;
+        }
+        .MatHang a{
+            text-decoration: none;
+        }
+        .MatHang p{
+            font-size: 15px;
+            color: black;
+            text-align: center;
+        }
+        .DanhMuc{
+            height: 50px;
+            width: 100%;
+        }
+        .DanhMuc ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .DanhMuc ul li{
+            list-style: none;
+            float: left;
+            display: block;
+            border: 0.75px solid red;
+            border-radius: 3px;
+            margin-right: 50px;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            color: black;
+        }
+        .DanhMuc ul li:hover{
+            background-color: orange;
+        }
+        .BanChay{
+            height: 330px;
+            width: 100%;
+        }
+        .SanPham{
+            height: 100px;
+            width: 325px;
+            float: left;
+            padding-right: 50px;
+            margin-top: 50px;
+            border-top: 3px solid red;
+            padding-top: 15px;
+        }
+        .SanPham a{
+            text-decoration: none;
+        }
+        .SanPham p{
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+        }
+        .SanPham a img{
+            padding-left: 50px;
+        }
+        .SanPham a img:hover{
+            transform: scale(1.1);
+        }
+        .SanPham p1{
+            color: red;
+            font-size: 17px;
+            font-weight: bold;
+        }
+        .SanPham p2{
+            color: gray;
+            text-decoration: line-through;
+            padding-left: 5px;
+        }
+        .SanPham p3{
+            color: black;
+            float: none;
+            font-size: 12px;
+        }
+        .MeoVat{
+            height: 200px;
+            width: 100%;
+        }
+        .MV{
+            height: 250px;
+            width: 370px;
+            border: 0.5px solid #cccccc;
+            float: left;
+            margin-right: 0.5px;
+        }
+        .MV a{
+            color: black;
+            text-decoration: none;
+        }
+        .MV img{
+            width: 100%;
+        }
+        .MV p{
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .Footer{
+            width: 100%;
+            height: 200px;
+            background-color: red;
+        }
+        .Footer-info{
+            float: left;
+        }
+        .Footer-info img{
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            padding-right: 15px;
+        }
+        .Footer-info p{
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            padding-left: 300px;
+        }
+        .Footer-info ul a{
+            text-decoration: none;
+            color: white;
+        }
+        .Footer-info ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .Footer-info ul li{
+            list-style: none;
+            padding-bottom: 10px;
+            padding-left: 300px;
+            color: white;
+        }
+    </style>
+
+    <script>
+        var slideIndex = 0;
+function plusSlides(n) {
+  showSlides2(slideIndex += n);
+}
+function showSlides2(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides"); 
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+    </script>
+</head>
+<body>
+    <div class="Header">
+        <div class="Header-top">
+            <a href="TrangChu.html"><img src="Images/TrangChu/logo.png"></a>
+            <div class="Search">
+                <input type="" name="" placeholder="Bạn cần tìm gì hôm nay?">
+                <button>
+                    <img src="Images/TrangChu/icon-search.webp">
+                </button>
+            </div>
+            <ul>
+                <li><a href="GioHang.html" title="Giỏ hàng"><img src="Images/TrangChu/icon6.png">Giỏ hàng</a><li>
+                <li><a href="DangNhap.html" title="Tài khoản"><img src="Images/TrangChu/icon7.png">Tài khoản</a></li>
+                <li><a href="#" title="Hotline"><img src="Images/TrangChu/icon8.png">Hotline: 1800 6800 (Miễn phí)<br>Mua hàng - Góp ý - Bảo hành</a></li>
+            </ul>
+        </div>
+        <div class="Header-bottom Header-bottom-width" >
+            <ul>
+                <li><a href="#" title="Danh mục sản phẩm" class="active"><img src="Images/TrangChu/icon1.webp">Danh mục sản phẩm</a></li>
+                <li><a href="#" title="Miễn phí giao lắp"><img src="Images/TrangChu/icon2.webp">Miễn phí giao lắp</a></li>
+                <li><a href="#" title="Cẩm nang khuyến mãi"><img src="Images/TrangChu/icon3.webp">Cẩm nang khuyến mãi</a></li>
+                <li><a href="MuaHangOnline.html" title="Hướng dẫn mua hàng online"><img src="Images/TrangChu/icon4.webp">Hướng dẫn mua hàng online</a></li>
+                <li><a href="#" title="Thương hiệu nổi bật"><img src="Images/TrangChu/icon5.webp">Thương hiệu nổi bật</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="Images/TrangChu/banner.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="Images/TrangChu/banner1.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="Images/TrangChu/banner2.png" style="width:100%">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>    
+      </div>
+    <div class="Main">
+        <!--Gia dụng nhà bếp-->
+        <div class="TieuDe">
+            <p>GIA DỤNG NHÀ BẾP</p>
+        </div>
+        <div class="MatHang-wrapper1">
+            <div class="MatHang">
+                <a href="SanPham.html"><img src="Images/TrangChu/giadungnhabep/noicomdien.jpg"></a>
+                <a href="#"><p>Nồi cơm điện</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/noichienkhongdau.jpg"></a>
+                <a href="#"><p>Nồi chiên không dầu</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/mayxaysinhto.jpg"></a>
+                <a href="#"><p>Máy xay sinh tố</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/mayeptraicay.jpg"></a>
+                <a href="#"><p>Máy ép trái cây</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/lovisong.jpg"></a>
+                <a href="#"><p>Lò vi sóng</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/bonoichao.jpg"></a>
+                <a href="#"><p>Bộ nồi chảo</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/binhdun.jpg"></a>
+                <a href="#"><p>Bình đun</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/bepgas.jpg"></a>
+                <a href="#"><p>Bếp gas</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/bepdientu.jpg"></a>
+                <a href="#"><p>Bếp điện từ</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/lonuong.jpg"></a>
+                <a href="#"><p>Lò nướng</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/noiapsuat.jpg"></a>
+                <a href="#"><p>Nồi áp suất</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/laudien.jpg"></a>
+                <a href="#"><p>Lẩu điện</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/mayphacaphe.jpg"></a>
+                <a href="#"><p>Máy pha cà phê</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/binhthuydien.jpg"></a>
+                <a href="#"><p>Bình thủy điện</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/mayxaythit.jpg"></a>
+                <a href="#"><p>Máy xay thịt</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/mayvatcam.jpg"></a>
+                <a href="#"><p>Máy vắt cam</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/maydanhtrung.jpg"></a>
+                <a href="#"><p>Máy đánh trứng</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/giadungnhabep/mayxaydaunanh.jpg"></a>
+                <a href="#"><p>Máy xay đậu nành</p></a>
+            </div>
+        </div>
+        <!--Thiết bị gia đình-->
+        <div class="TieuDe">
+            <p>THIẾT BỊ GIA ĐÌNH</p>
+        </div>
+        <div class="MatHang-wrapper2">
+            <div class="MatHang">
+                <img src="Images/TrangChu/thietbigiadinh/banui.jpg">
+                <a href="#"><p>Bàn ủi</p></a>
+            </div>
+            <div class="MatHang">
+                <img src="Images/TrangChu/thietbigiadinh/denbatmuoi.jpg">
+                <a href="#"><p>Đèn bắt muỗi</p></a>
+            </div>
+            <div class="MatHang">
+                <img src="Images/TrangChu/thietbigiadinh/dendien.jpg">
+                <a href="#"><p>Đèn điện</p></a>
+            </div>
+            <div class="MatHang">
+                <img src="Images/TrangChu/thietbigiadinh/mayhutbui.jpg">
+                <a href="#"><p>Máy hút bụi</p></a>
+            </div>
+            <div class="MatHang">
+                <img src="Images/TrangChu/thietbigiadinh/mayhuttaoam.jpg">
+                <a href="#"><p>Máy hút tạo ẩm</p></a>
+            </div>
+            <div class="MatHang">
+                <img src="Images/TrangChu/thietbigiadinh/maylockhongkhi.jpg">
+                <a href="#"><p>Máy lọc không khí</p></a>
+            </div>
+            <div class="MatHang">
+                <img src="Images/TrangChu/thietbigiadinh/maylocnuoc.jpg">
+                <a href="#"><p>Máy lọc nước</p></a>
+            </div>
+            <div class="MatHang">
+                <img src="Images/TrangChu/thietbigiadinh/maynuocnong.jpg">
+                <a href="#"><p>Máy nước nóng</p></a>
+            </div>
+            <div class="MatHang">
+                <img src="Images/TrangChu/thietbigiadinh/ocamdien.jpg">
+                <a href="#"><p>Ổ cắm điện</p></a>
+            </div>
+            <div class="MatHang">
+                <img src="Images/TrangChu/thietbigiadinh/quat.jpg">
+                <a href="#"><p>Quạt</p></a>
+            </div>
+            <div class="MatHang">
+                <img src="Images/TrangChu/thietbigiadinh/thietbigiadinh.jpg">
+                <a href="#"><p>Thiết bị gia đình</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/thietbigiadinh/votmuoi.jpg"></a>
+                <a href="#"><p>Vợt muỗi</p></a>
+            </div>
+        </div>
+        <!--Sức khỏe gia đình-->
+        <div class="TieuDe">
+            <p>SỨC KHỎE GIA ĐÌNH</p>
+        </div>
+        <div class="MatHang-wrapper3">
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/suckhoegiadinh/cansuckhoe.jpg"></a>
+                <a href="#"><p>Cân sức khỏe</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/suckhoegiadinh/ghemassage.jpg"></a>
+                <a href="#"><p>Ghế massage</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/suckhoegiadinh/maycaorau.jpg"></a>
+                <a href="#"><p>Máy cạo râu</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/suckhoegiadinh/maysaytoc.jpg"></a>
+                <a href="#"><p>Máy sấy tóc</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/suckhoegiadinh/maytaptheduc.jpg"></a>
+                <a href="#"><p>Máy tập thể dục</p></a>
+            </div>
+            <div class="MatHang">
+                <a href="#"><img src="Images/TrangChu/suckhoegiadinh/thietbiyte.jpg"></a>
+                <a href="#"><p>Thiết bị y tế</p></a>
+            </div>
+        </div>
+        <div class="TieuDeLon">
+            <p><img src="Images/TrangChu/arrow.png">SẢN PHẨM BÁN CHẠY</p>
+        </div>
+        <div class="DanhMuc">
+            <ul>
+                <a href="#"><li>Nổi bật</li></a>
+                <a href="#"><li>Nồi cơm điện</li></a>
+                <a href="#"><li>Lò vi sóng, lò nướng</li></a>
+                <a href="#"><li>Bếp từ, bếp gas</li></a>
+                <a href="#"><li>Máy xay sinh tố</li></a>
+                <a href="#"><li>Máy lọc nước</li></a>
+                <a href="#"><li>Quạt</li></a>
+                <a href="#"><li>Điện gia dụng khác</li></a>
+            </ul>
+        </div>
+        <div class="BanChay">
+            <div class="SanPham">
+                <a href="ChiTietSanPham.html"><img src="Images/TrangChu/sanphambanchay/bepdientu.jpg"></a>
+                <a href="ChiTietSanPham.html"><p>Bếp điện từ hồng ngoại Ferroli IC4200KS</p></a>
+                <p1>3.490.000đ</p1>
+                <p2>8.800.000đ</p2>
+                <br><p3>Tiết kiệm 5.310.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/TrangChu/sanphambanchay/noichienkhongdau.jpg"></a>
+                <a href="#"><p>Nồi chiên không dầu Sunhouse 3 lít SHD4025B</p></a>
+                <p1>990.000đ</p1>
+                <p2>1.690.000đ</p2>
+                <br><p3>Tiết kiệm 700.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/TrangChu/sanphambanchay/bonoichao.jpg"></a>
+                <a href="#"><p>Bộ nồi chảo inox 5 đáy Sunhouse SHG995</p></a>
+                <p1>990.000đ</p1>
+                <p2>2.290.000đ</p2>
+                <br><p3>Tiết kiệm 1.300.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/TrangChu/sanphambanchay/noicomdien.jpg"></a>
+                <a href="#"><p>Nồi cơm điện Sharp 1.8 lít KS-COM186EV-GL</p></a>
+                <p1>1.290.000đ</p1>
+                <p2>1.340.000đ</p2>
+                <br><p3>Tiết kiệm 50.000đ</p3>
+            </div>
+        </div>
+        <div class="BanChay">
+            <div class="SanPham">
+                <a href="#"><img src="Images/TrangChu/sanphambanchay/mayphacaphe.jpg"></a>
+                <a href="#"><p>Pha cà phê Delonghi ICM12011.BK</p></a>
+                <p1>1.090.000đ</p1>
+                <p2>1.840.000đ</p2>
+                <br><p3>Tiết kiệm 750.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/TrangChu/sanphambanchay/maydanhtrung.jpg"></a>
+                <a href="#"><p>Máy đánh trứng Philips HR3705/20</p></a>
+                <p1>690.000đ</p1>
+                <p2>790.000đ</p2>
+                <br><p3>Tiết kiệm 100.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/TrangChu/sanphambanchay/lovisong.jpg"></a>
+                <a href="#"><p>Lò vi sóng Panasonic 25 lít NN-SM33HMYUE</p></a>
+                <p1>2.350.000đ</p1>
+                <p2>2.770.000đ</p2>
+                <br><p3>Tiết kiệm 420.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/TrangChu/sanphambanchay/lonuong.jpg"></a>
+                <a href="#"><p>Lò nướng Sanaky 50 lít VH-5099S2D</p></a>
+                <p1>2.100.000đ</p1>
+                <p2>2.490.000đ</p2>
+                <br><p3>Tiết kiệm 390.000đ</p3>
+            </div>
+        </div>
+        <div class="BanChay">
+            <div class="SanPham">
+                <a href="#"><img src="Images/TrangChu/sanphambanchay/bonoichaochongdinh.jpg"></a>
+                <a href="#"><p>Bộ nồi chảo chống dính Baby Elmich EL-1167</p></a>
+                <p1>399.000đ</p1>
+                <p2>560.000đ</p2>
+                <br><p3>Tiết kiệm 161.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/TrangChu/sanphambanchay/mayhutmui.jpg"></a>
+                <a href="#"><p>Máy hút mùi Kangaroo KG70BH1</p></a>
+                <p1>2.490.000đ</p1>
+                <p2>2.800.000đ</p2>
+                <br><p3>Tiết kiệm 310.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/TrangChu/sanphambanchay/bonoiinox.jpg"></a>
+                <a href="#"><p>Bộ nồi inox liền khối Elmich Trimax XR EL-3843</p></a>
+                <p1>1.290.000đ</p1>
+                <p2>1.670.000đ</p2>
+                <br><p3>Tiết kiệm 380.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/TrangChu/sanphambanchay/noilaudien.jpg"></a>
+                <a href="#"><p>Nồi lẩu điện Sunhouse SHD4527 3.5 lít</p></a>
+                <p1>590.000đ</p1>
+                <p2>750.000đ</p2>
+                <br><p3>Tiết kiệm 160.000đ</p3>
+            </div>
+        </div>
+        <div class="BanChay">
+            <div class="SanPham">
+                <a href="#"><img src="Images/TrangChu/sanphambanchay/bepdientu.jpg"></a>
+                <a href="#"><p>Bếp hồng ngoại Junger ASC-86</p></a>
+                <p1>1.790.000đ</p1>
+                <p2>1.990.000đ</p2>
+                <br><p3>Tiết kiệm 200.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/TrangChu/sanphambanchay/mayxaysinhto.jpg"></a>
+                <a href="#"><p>Máy xay sinh tố Philips HR2221/00</p></a>
+                <p1>1.190.000đ</p1>
+                <p2>1.490.000đ</p2>
+                <br><p3>Tiết kiệm 300.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/TrangChu/sanphambanchay/mayxaydanang.jpg"></a>
+                <a href="#"><p>Máy xay nấu đa năng Midea MJ-BL100GH</p></a>
+                <p1>1.790.000đ</p1>
+                <p2>4.000.000đ</p2>
+                <br><p3>Tiết kiệm 510.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/TrangChu/sanphambanchay/mayxaycamtay.jpg"></a>
+                <a href="#"><p>Máy xay sinh tố cầm tay Philips HR2534/00</p></a>
+                <p1>790.000đ</p1>
+                <p2>950.000đ</p2>
+                <br><p3>Tiết kiệm 160.000đ</p3>
+            </div>
+        </div>
+        <div class="TieuDeLon" style="padding-top: 20px;">
+            <p><img src="Images/TrangChu/arrow.png">KINH NGHIỆM, MẸO VẶT HAY</p>
+        </div>
+        <div class="MeoVat">
+            <div class="MV">
+                <a href="#"><img src="Images/TrangChu/meovat/1.jpg"></a>
+                <a href="#"><p>Cách chọn hộp đựng thực phẩm trong tủ lạnh chuẩn xác, an toàn</p></a>
+            </div>
+            <div class="MV">
+                <a href="#"><img src="Images/TrangChu/meovat/2.jpg"></a>
+                <a href="#"><p>Vì sao khi để rau tươi trong tủ lạnh quá lâu, rau lại bị nát?</p></a>
+            </div>
+            <div class="MV">
+                <a href="#"><img src="Images/TrangChu/meovat/3.jpg"></a>
+                <a href="#"><p>4 mẹo giặt quần áo cho người bận rộn đơn giản, nhanh chóng</p></a>
+            </div>
+            <div class="MV">
+                <a href="#"><img src="Images/TrangChu/meovat/4.jpg"></a>
+                <a href="#"><p>Cách sử dụng quạt điện được bền lâu và đúng cách</p></a>
+            </div>
+        </div>
+    </div>
+    <div class="Footer">
+        <div class="Footer-info">
+            <ul>
+                <p>Gia dụng xanh HAT</p>
+                <li><a href="#"><img src="Images/TrangChu/icon9.png">Số 2 Lê Đức Thọ, Mai Dịch, Từ Liêm, Hà Nội</a></li>
+                <li><a href="#"><img src="Images/TrangChu/icon8.png">Hotline: 1800 6800</a></li>
+                <li><a href="#"><img src="Images/TrangChu/icon10.png">Email: giadungxanhHat@gmail.com</a></li>
+            </ul>
+        </div>
+        <div class="Footer-info">
+            <ul>
+                <p>Truy cập nhanh</p>
+                <li><a href="TrangChu.html">> Trang chủ</a></li>
+                <li><a href="#">> Giới thiệu</a></li>
+                <li><a href="#">> Mua hàng</a></li>
+                <li><a href="#">> Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="Footer-info">
+            <ul>
+                <p>Follow us</p>
+                <li><a href="#"><img src="Images/TrangChu/icon11.png">Facebook</a></li>
+                <li><a href="#"><img src="Images/TrangChu/icon12.jpg">Twitter</a></li>
+                <li><a href="#"><img src="Images/TrangChu/icon13.webp">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

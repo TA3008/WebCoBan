@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nồi cơm điện</title>
+
+    <style>
+                .Header{
+            height: 150px;
+        }
+        .Header-top{
+            background-color: red;
+            height: 100px;
+            width: 100%;
+            margin: 0px;
+        }
+        .Header-top img{
+            height: 100px;
+            width: 180px;
+            padding-left: 100px;
+            float: left;
+        }
+        .Header-top ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .Header-top ul li {
+            list-style: none;
+            float: left;
+            padding-left: 25px;
+            padding-top: 40px;
+            font-size: 20px;
+        }
+        .Header-top ul li a{
+            text-decoration: none;
+            color: white;
+        }
+        .Header-top ul li img{
+            height: 27px;
+            width: 27px;
+            padding-right: 1px;
+            vertical-align: middle;
+        }
+        .Header-bottom-width{
+            font-size: 13px;
+            width: 1500px;
+            margin: 0px auto;           
+        }
+        .Search{
+            height: 40px;
+            width: 550px;
+            background-color: white;
+            float: left;
+            margin-top: 30px;
+            border-radius: 6px;
+        }
+        .Search input{
+            height: 20px;
+            width: 480px;
+            background-color: white;
+            padding-top: 12px;
+            border: none;
+            border-radius: 6px;
+        }
+        .Search button{
+            height: 40px;
+            width: 45px;
+            float: right;
+            background-color: orange;
+            border-radius: 6px;
+        }
+        .Search button img{
+            height: 30px;
+            width: 30px;
+            float: right;
+        }       
+        .Header-bottom{
+            background-color: white;
+            height: 50px;
+        }
+        .Header-bottom ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .Header-bottom ul li{
+            list-style: none;
+            float: left;
+            padding-right: 40px;
+            line-height: 40px;
+        }
+        .Header-bottom ul li a:hover{
+            color: red;
+        }
+        .Header-bottom ul li a{
+            text-decoration: none;
+            display: block;
+            color: black;
+        }
+        .Header-bottom ul li a.active{
+            background-color: black;
+            font-size: 15px;
+            color: white;
+            padding-right: 20px;
+        }
+        .Header-bottom ul li img{
+            width: 20px;
+            height: 20px;
+            padding-right: 2px;
+            line-height: 0px;
+            vertical-align: middle;
+        }
+        .slideshow-container {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+        }
+        mySlides {
+            display: none;
+        } 
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        .active {
+            background-color: #717171;
+        }
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 3s;
+        }
+        .Container{
+            height: 1700px;
+            width: 1500px;
+            margin: 0 auto;
+        }
+        .left{
+            height: 900px;
+            width: 23%;
+            float: left;
+            border-bottom: 0.5px solid #cccccc;
+        }
+        .left p{
+            font-size: 25px;
+            font-weight: bold;
+            padding: 7px;
+            border-top: 0.5px solid #cccccc;
+            border-bottom: 0.5px solid #cccccc;
+        }
+        .FormCheckbox{
+            padding: 5px;
+        }
+        .right{
+            height: 1700px;
+            width: 75%;
+            float: left;
+            padding-left: 20px;
+        }
+        .Top{
+            width: 1500px;
+            height: 400px;
+            margin: 0px auto;
+            border-bottom: 2px solid red;
+        }
+        .SanPham{
+            height: 300px;
+            width: 325px;
+            padding-right: 50px;
+            margin-top: 10px;
+            padding-top: 15px;
+            float: left;
+        }
+        .SanPham a{
+            text-decoration: none;
+        }
+        .SanPham p{
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+        }
+        .SanPham a img{
+            padding-left: 50px;
+            height: 180px;
+            width: 230px;
+        }
+        .SanPham a img:hover{
+            transform: scale(1.1);
+        }
+        .SanPham p1{
+            color: red;
+            font-size: 17px;
+            font-weight: bold;
+        }
+        .SanPham p2{
+            color: gray;
+            text-decoration: line-through;
+            padding-left: 5px;
+        }
+        .SanPham p3{
+            color: black;
+            float: none;
+            font-size: 12px;
+        }
+        .Footer{
+            width: 100%;
+            height: 200px;
+            background-color: red;
+        }
+        .Footer-info{
+            float: left;
+        }
+        .Footer-info img{
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            padding-right: 15px;
+        }
+        .Footer-info p{
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            padding-left: 300px;
+        }
+        .Footer-info ul a{
+            text-decoration: none;
+            color: white;
+        }
+        .Footer-info ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .Footer-info ul li{
+            list-style: none;
+            padding-bottom: 10px;
+            padding-left: 300px;
+            color: white;
+        }
+    </style>
+
+    <script>
+        var slideIndex = 0;
+function plusSlides(n) {
+  showSlides2(slideIndex += n);
+}
+function showSlides2(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides"); 
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+    </script>
+</head>
+<body>
+    <div class="Header">
+        <div class="Header-top">
+            <a href="Index.html"><img src="Images/TrangChu/logo.png"></a>
+            <div class="Search">
+                <input type="" name="" placeholder="Bạn cần tìm gì hôm nay?">
+                <button>
+                    <img src="Images/TrangChu/icon-search.webp">
+                </button>
+            </div>
+            <ul>
+                <li><a href="GioHang.html" title="Giỏ hàng"><img src="Images/TrangChu/icon6.png">Giỏ hàng</a><li>
+                <li><a href="DangNhap.html" title="Tài khoản"><img src="Images/TrangChu/icon7.png">Tài khoản</a></li>
+                <li><a href="#" title="Hotline"><img src="Images/TrangChu/icon8.png">Hotline: 1800 6800 (Miễn phí)<br>Mua hàng - Góp ý - Bảo hành</a></li>
+            </ul>
+        </div>
+        <div class="Header-bottom Header-bottom-width" >
+            <ul>
+                <li><a href="#" title="Danh mục sản phẩm" class="active"><img src="Images/TrangChu/icon1.webp">Danh mục sản phẩm</a></li>
+                <li><a href="#" title="Miễn phí giao lắp"><img src="Images/TrangChu/icon2.webp">Miễn phí giao lắp</a></li>
+                <li><a href="#" title="Cẩm nang khuyến mãi"><img src="Images/TrangChu/icon3.webp">Cẩm nang khuyến mãi</a></li>
+                <li><a href="MuaHangOnline.html" title="Hướng dẫn mua hàng online"><img src="Images/TrangChu/icon4.webp">Hướng dẫn mua hàng online</a></li>
+                <li><a href="#" title="Thương hiệu nổi bật"><img src="Images/TrangChu/icon5.webp">Thương hiệu nổi bật</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="Images/TrangChu/banner.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="Images/TrangChu/banner1.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="Images/TrangChu/banner2.png" style="width:100%">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>    
+      </div>
+      <div class="Top">
+        <p style="font-size: 30px; font-weight: bold;margin-left: 100px;">Top Nồi Cơm Điện được yêu thích nhất</p>
+        <div class="SanPham">
+            <a href="#"><img src="Images/DanhMucSanPham/yeuthich/noicom1.jpg"></a>
+            <a href="#"><p>Nồi cơm điện Toshiba 1.8 lít RC-18NTFV(W)</p></a>
+            <p1>2.690.000đ</p1>
+            <p2>2.990.000đ</p2>
+            <br><p3>Tiết kiệm 300.000đ</p3>
+        </div>
+        <div class="SanPham">
+            <a href="#"><img src="Images/DanhMucSanPham/yeuthich/noicom2.jpg"></a>
+            <a href="#"><p>Nồi cơm điện Toshiba 1 lít RC-10NMFVN(WT)</p></a>
+            <p1>2.390.000đ</p1>
+            <p2>2.550.000đ</p2>
+            <br><p3>Tiết kiệm 160.000đ</p3>
+        </div>
+        <div class="SanPham">
+            <a href="#"><img src="Images/DanhMucSanPham/yeuthich/noicom3.jpg"></a>
+            <a href="#"><p>Nồi cơm điện Midea 1.5 Lít MR-CM1531</p></a>
+            <p1>440.000đ</p1>
+        </div>
+        <div class="SanPham">
+            <a href="#"><img src="Images/DanhMucSanPham/yeuthich/noicom4.jpg"></a>
+            <a href="#"><p>Nồi cơm điện Sunhouse 1.8L SHD8607W</p></a>
+            <p1>690.000đ</p1>
+            <p2>1.100.000đ</p2>
+            <br><p3>Tiết kiệm 410.000đ</p3>
+        </div>
+    </div>
+      <div class="Container">
+        <div class="left">
+                <p>Dung tích</p>
+                <div class="FormCheckbox">
+                    <label for="Checkbox" class="CheckboxItem">
+                        <input type="checkbox" class="Checkbox" id="Checkbox"> Dưới 1 lít
+                    </label>
+                </div>               
+                <div class="FormCheckbox">
+                    <label for="Checkbox" class="CheckboxItem">
+                        <input type="checkbox" class="Checkbox" id="Checkbox"> Từ 1 lít đến 1.5 lít
+                    </label>
+                </div>
+                <div class="FormCheckbox">
+                    <label for="Checkbox" class="CheckboxItem">
+                        <input type="checkbox" class="Checkbox" id="Checkbox"> Từ 1.5 lít đến 2 lít
+                    </label>
+                </div>
+                <div class="FormCheckbox">
+                    <label for="Checkbox" class="CheckboxItem">
+                        <input type="checkbox" class="Checkbox" id="Checkbox"> Trên 2 lít
+                    </label>
+                </div>
+                <p>Công suất</p>
+                <div class="FormCheckbox">
+                    <label for="Checkbox" class="CheckboxItem">
+                        <input type="checkbox" class="Checkbox" id="Checkbox"> 220V-785W
+                    </label>
+                </div>               
+                <div class="FormCheckbox">
+                    <label for="Checkbox" class="CheckboxItem">
+                        <input type="checkbox" class="Checkbox" id="Checkbox"> Dưới 500W
+                    </label>
+                </div>
+                <div class="FormCheckbox">
+                    <label for="Checkbox" class="CheckboxItem">
+                        <input type="checkbox" class="Checkbox" id="Checkbox"> Từ 500W đến dưới 1000W
+                    </label>
+                </div>
+                <div class="FormCheckbox">
+                    <label for="Checkbox" class="CheckboxItem">
+                        <input type="checkbox" class="Checkbox" id="Checkbox"> Từ 1000W đến dưới 2000W
+                    </label>
+                </div>
+                <div class="FormCheckbox">
+                    <label for="Checkbox" class="CheckboxItem">
+                        <input type="checkbox" class="Checkbox" id="Checkbox"> Trên 2000W
+                    </label>
+                </div>
+                <p>Giá bán</p>
+                <div class="FormCheckbox">
+                    <label for="Checkbox" class="CheckboxItem">
+                        <input type="checkbox" class="Checkbox" id="Checkbox"> Dưới 1 triệu
+                    </label>
+                </div>               
+                <div class="FormCheckbox">
+                    <label for="Checkbox" class="CheckboxItem">
+                        <input type="checkbox" class="Checkbox" id="Checkbox"> Từ 1 - 2 triệu
+                    </label>
+                </div>
+                <div class="FormCheckbox">
+                    <label for="Checkbox" class="CheckboxItem">
+                        <input type="checkbox" class="Checkbox" id="Checkbox"> Trên 2 triệu
+                    </label>
+                </div>
+                <p>Loại nồi</p>
+                <div class="FormCheckbox">
+                    <label for="Checkbox" class="CheckboxItem">
+                        <input type="checkbox" class="Checkbox" id="Checkbox"> Nồi cơm điện tử
+                    </label>
+                </div>               
+                <div class="FormCheckbox">
+                    <label for="Checkbox" class="CheckboxItem">
+                        <input type="checkbox" class="Checkbox" id="Checkbox"> Nồi cơm nắp rời
+                    </label>
+                </div>
+                <div class="FormCheckbox">
+                    <label for="Checkbox" class="CheckboxItem">
+                        <input type="checkbox" class="Checkbox" id="Checkbox"> Nồi cơm điện nắp gài
+                    </label>
+                </div>
+        </div>
+        <div class="right">
+            <div class="SanPham">
+                <a href="#"><img src="Images/DanhMucSanPham/sanpham/noicom1.jpg"></a>
+                <a href="#"><p>Nồi cơm điện Happy Cook 0.6 lít HC-060 Xanh</p></a>
+                <p1>590.000đ</p1>
+                <p2>780.000đ</p2>
+                <br><p3>Tiết kiệm 190.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/DanhMucSanPham/sanpham/noicom2.jpg"></a>
+                <a href="#"><p>Nồi cơm điện Sharp 1.8 lít KS-181TJV</p></a>
+                <p1>580.000đ</p1>
+                <p2>750.000đ</p2>
+                <br><p3>Tiết kiệm 170.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/DanhMucSanPham/sanpham/noicom3.jpg"></a>
+                <a href="#"><p>Nồi cơm điện Sharp 1.8 lít KS-NR191STV</p></a>
+                <p1>1.290.000đ</p1>
+                <p2>1.520.000đ</p2>
+                <br><p3>Tiết kiệm 230.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/DanhMucSanPham/sanpham/noicom4.jpg"></a>
+                <a href="#"><p>Nồi cơm điện Toshiba 1 lít RC-10JFM(H)VN</p></a>
+                <p1>590.000đ</p1>
+                <p2>650.000đ</p2>
+                <br><p3>Tiết kiệm 60.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/DanhMucSanPham/sanpham/noicom5.jpg"></a>
+                <a href="#"><p>Nồi cơm điện Happy Cook 3 lít HC-300</p></a>
+                <p1>890.000đ</p1>
+                <p2>990.000đ</p2>
+                <br><p3>Tiết kiệm 100.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/DanhMucSanPham/sanpham/noicom6.jpg"></a>
+                <a href="#"><p>Nồi cơm điện Sharp 10 lít KSH-D1010V</p></a>
+                <p1>3.790.000đ</p1>
+                <p2>4.200.000đ</p2>
+                <br><p3>Tiết kiệm 410.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/DanhMucSanPham/sanpham/noicom7.jpg"></a>
+                <a href="#"><p>Nồi cơm điện Sharp 0.6 lít KSH-D06V</p></a>
+                <p1>560.000đ</p1>
+                <p2>640.000đ</p2>
+                <br><p3>Tiết kiệm 80.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/DanhMucSanPham/sanpham/noicom8.jpg"></a>
+                <a href="#"><p>Nồi cơm điện Sharp 5 lít KSH-D55V</p></a>
+                <p1>2.550.000đ</p1>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/DanhMucSanPham/sanpham/noicom9.jpg"></a>
+                <a href="#"><p>Nồi cơm điện Cuckoo 1.08 lít CR-0661</p></a>
+                <p1>1.690.000đ</p1>
+                <p2>1.990.000đ</p2>
+                <br><p3>Tiết kiệm 300.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/DanhMucSanPham/sanpham/noicom10.jpg"></a>
+                <a href="#"><p>Nồi cơm điện Toshiba 1.8 lít RC-18DH2PV(W)</p></a>
+                <p1>3.490.000đ</p1>
+                <p2>8.800.000đ</p2>
+                <br><p3>Tiết kiệm 5.310.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/DanhMucSanPham/sanpham/noicom11.jpg"></a>
+                <a href="#"><p>Nồi cơm điện Toshiba 1.8 lít RC-18JFM(H)VN</p></a>
+                <p1>990.000đ</p1>
+                <p2>1.690.000đ</p2>
+                <br><p3>Tiết kiệm 700.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/DanhMucSanPham/sanpham/noicom12.jpg"></a>
+                <a href="#"><p>Nồi cơm điện Sharp 1.8 lít KS-181TJV "PB"</p></a>
+                <p1>990.000đ</p1>
+                <p2>2.290.000đ</p2>
+                <br><p3>Tiết kiệm 1.300.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/DanhMucSanPham/sanpham/noicom13.jpg"></a>
+                <a href="#"><p>Nồi cơm điện Toshiba 1.8 Lít RC-18IX1PV</p></a>
+                <p1>3.490.000đ</p1>
+                <p2>8.800.000đ</p2>
+                <br><p3>Tiết kiệm 5.310.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/DanhMucSanPham/sanpham/noicom14.jpg"></a>
+                <a href="#"><p>Nồi cơm điện Happy Cook 1.2 lít HC-120</p></a>
+                <p1>990.000đ</p1>
+                <p2>1.690.000đ</p2>
+                <br><p3>Tiết kiệm 700.000đ</p3>
+            </div>
+            <div class="SanPham">
+                <a href="#"><img src="Images/DanhMucSanPham/sanpham/noicom15.jpg"></a>
+                <a href="#"><p>Nồi cơm điện Cuckoo 1.8 lít CR-1055</p></a>
+                <p1>990.000đ</p1>
+                <p2>2.290.000đ</p2>
+                <br><p3>Tiết kiệm 1.300.000đ</p3>
+            </div>
+        </div>
+      </div>
+      <div class="Footer">
+        <div class="Footer-info">
+            <ul>
+                <p>Gia dụng xanh HAT</p>
+                <li><a href="#"><img src="Images/TrangChu/icon9.png">Số 2 Lê Đức Thọ, Mai Dịch, Từ Liêm, Hà Nội</a></li>
+                <li><a href="#"><img src="Images/TrangChu/icon8.png">Hotline: 1800 6800</a></li>
+                <li><a href="#"><img src="Images/TrangChu/icon10.png">Email: giadungxanhHat@gmail.com</a></li>
+            </ul>
+        </div>
+        <div class="Footer-info">
+            <ul>
+                <p>Truy cập nhanh</p>
+                <li><a href="Index.html">> Trang chủ</a></li>
+                <li><a href="#">> Giới thiệu</a></li>
+                <li><a href="#">> Mua hàng</a></li>
+                <li><a href="#">> Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="Footer-info">
+            <ul>
+                <p>Follow us</p>
+                <li><a href="#"><img src="Images/TrangChu/icon11.png">Facebook</a></li>
+                <li><a href="#"><img src="Images/TrangChu/icon12.jpg">Twitter</a></li>
+                <li><a href="#"><img src="Images/TrangChu/icon13.webp">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

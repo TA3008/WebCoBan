@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <style>
+        .Main{
+            font-size: 13px;
+            width: 1500px;
+            margin: 0 auto;
+            height: 3050px;
+        }
+        .Header{
+            height: 150px;
+        }
+        .Header-top{
+            background-color: red;
+            height: 100px;
+            width: 100%;
+            margin: 0px;
+        }
+        .Header-top img{
+            height: 100px;
+            width: 180px;
+            padding-left: 100px;
+            float: left;
+        }
+        .Header-top ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .Header-top ul li {
+            list-style: none;
+            float: left;
+            padding-left: 25px;
+            padding-top: 40px;
+            font-size: 20px;
+        }
+        .Header-top ul li a{
+            text-decoration: none;
+            color: white;
+        }
+        .Header-top ul li img{
+            height: 27px;
+            width: 27px;
+            padding-right: 1px;
+            vertical-align: middle;
+        }
+        .Header-bottom-width{
+            font-size: 13px;
+            width: 1500px;
+            margin: 0px auto;           
+        }
+        .Search{
+            height: 40px;
+            width: 550px;
+            background-color: white;
+            float: left;
+            margin-top: 30px;
+            border-radius: 6px;
+        }
+        .Search input{
+            height: 20px;
+            width: 480px;
+            background-color: white;
+            padding-top: 12px;
+            border: none;
+            border-radius: 6px;
+        }
+        .Search button{
+            height: 40px;
+            width: 45px;
+            float: right;
+            background-color: orange;
+            border-radius: 6px;
+        }
+        .Search button img{
+            height: 30px;
+            width: 30px;
+            float: right;
+        }       
+        .Header-bottom{
+            background-color: white;
+            height: 50px;
+        }
+        .Header-bottom ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .Header-bottom ul li{
+            list-style: none;
+            float: left;
+            padding-right: 40px;
+            line-height: 40px;
+        }
+        .Header-bottom ul li a:hover{
+            color: red;
+        }
+        .Header-bottom ul li a{
+            text-decoration: none;
+            display: block;
+            color: black;
+        }
+        .Header-bottom ul li a.active{
+            background-color: black;
+            font-size: 15px;
+            color: white;
+            padding-right: 20px;
+        }
+        .Header-bottom ul li img{
+            width: 20px;
+            height: 20px;
+            padding-right: 2px;
+            line-height: 0px;
+            vertical-align: middle;
+        }
+        .Container{
+            height: 1000px;
+            width: 1500px;
+            margin: 0 auto;
+        }
+        .Container p{
+            font-size: 30px;
+            font-weight: bold;
+            color: gray;
+            text-align: center;
+        }
+        .ChiTiet{
+            border: 1px solid #cccccc;
+            height: 610px;
+            width: 100%;
+        }
+        .DanhMuc{
+            height: 50px;
+            width: 100%;
+            border-bottom: 1px solid #cccccc;
+        }
+        .DanhMuc ul{
+            margin: 0;
+            padding: 0;
+        }
+        .DanhMuc ul li{
+            list-style: none;
+            font-weight: bold;
+            font-size: 20px;
+            height: 40px;
+            float: left;
+            border-right: 1px solid #cccccc;
+            padding-top: 10px;
+        }
+        .SanPham{
+            height: 280px;
+            width: 100%;
+            border-bottom: 1px solid #cccccc;
+        }
+        .SanPham ul{
+            margin: 0;
+            padding: 0;           
+        }
+        .SanPham ul li{
+            list-style: none;
+            font-weight: bold;
+            font-size: 20px;
+            height: 270px;
+            float: left;
+            border-right: 1px solid #cccccc;
+            padding-top: 10px;
+        }
+        .TongTien{
+            width: 100%;
+            height: 50px;
+        }
+        .TongTien ul{
+            margin: 0;
+            padding: 0;
+        }
+        .TongTien ul li{
+            list-style: none;
+            font-size: 30px;
+            font-weight: bold;
+            padding-top: 10px;
+        }
+        .XacNhan{
+            width: 100%;
+            height: 100px;
+        }
+        .XacNhan p{
+            font-size: 18px;
+            font-weight: none;
+        }
+        .XacNhan a{
+            text-decoration: none;
+            color: blue;
+        }
+        .XacNhan ul{
+            padding: 0;
+            margin: 0;
+        }
+        .XacNhan ul a{
+            color: white;
+        }
+        .XacNhan ul li{
+            list-style: none;
+            float: left;
+            background-color: red;
+            border: 0.5px solid red;
+            border-radius: 5px;
+            height: 50px;
+            width: 200px;
+            margin-right: 20px;
+            text-align: center;
+            padding-top: 20px;
+        }
+        .XacNhan img{
+            height: 27px;
+            width: 27px;
+            vertical-align: middle;
+        }
+        .Footer{
+            width: 100%;
+            height: 200px;
+            background-color: red;
+        }
+        .Footer-info{
+            float: left;
+        }
+        .Footer-info img{
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            padding-right: 15px;
+        }
+        .Footer-info p{
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            padding-left: 300px;
+        }
+        .Footer-info ul a{
+            text-decoration: none;
+            color: white;
+        }
+        .Footer-info ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .Footer-info ul li{
+            list-style: none;
+            padding-bottom: 10px;
+            padding-left: 300px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="Header">
+        <div class="Header-top">
+            <a href="Index.html"><img src="Images/TrangChu/logo.png"></a>
+            <div class="Search">
+                <input type="" name="" placeholder="Bạn cần tìm gì hôm nay?">
+                <button>
+                    <img src="Images/TrangChu/icon-search.webp">
+                </button>
+            </div>
+            <ul>
+                <li><a href="GioHang.html" title="Giỏ hàng"><img src="Images/TrangChu/icon6.png">Giỏ hàng</a><li>
+                <li><a href="DangNhap.html" title="Tài khoản"><img src="Images/TrangChu/icon7.png">Tài khoản</a></li>
+                <li><a href="#" title="Hotline"><img src="Images/TrangChu/icon8.png">Hotline: 1800 6800 (Miễn phí)<br>Mua hàng - Góp ý - Bảo hành</a></li>
+            </ul>
+        </div>
+        <div class="Header-bottom Header-bottom-width" >
+            <ul>
+                <li><a href="#" title="Danh mục sản phẩm" class="active"><img src="Images/TrangChu/icon1.webp">Danh mục sản phẩm</a></li>
+                <li><a href="#" title="Miễn phí giao lắp"><img src="Images/TrangChu/icon2.webp">Miễn phí giao lắp</a></li>
+                <li><a href="#" title="Cẩm nang khuyến mãi"><img src="Images/TrangChu/icon3.webp">Cẩm nang khuyến mãi</a></li>
+                <li><a href="MuaHangOnline.html" title="Hướng dẫn mua hàng online"><img src="Images/TrangChu/icon4.webp">Hướng dẫn mua hàng online</a></li>
+                <li><a href="#" title="Thương hiệu nổi bật"><img src="Images/TrangChu/icon5.webp">Thương hiệu nổi bật</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="Container">
+        <p>GIỎ HÀNG</p>
+        <div class="ChiTiet">
+            <div class="DanhMuc">
+                <ul>
+                    <li style="padding-right: 25px; padding-left: 25px;">STT</li>
+                    <li style="padding-right: 130px; padding-left: 130px;">Ảnh đại diện</li>
+                    <li style="padding-right: 170px; padding-left: 170px;">Tên sản phẩm</li>
+                    <li style="padding-right: 25px; padding-left: 25px;">Số lượng</li>
+                    <li style="padding-right: 50px; padding-left: 50px;">Đơn giá</li>
+                    <li style="padding-right: 40px; padding-left: 40px;">Thành tiền</li>
+                    <li style="padding-right: 5px; padding-left: 5px; border-right: none;">Hành động</li>
+                </ul>
+            </div>
+            <div class="SanPham">
+                <ul>
+                    <li style="padding-right: 57.82px; padding-left: 20px;">1</li>
+                    <li style="padding-right: 200.07px; padding-left: 20px;"><img src="Images/TrangChu/giadungnhabep/bepdientu.jpg" style="width:150px; height: 150px;"></li>
+                    <li style="padding-right: 85.05px; padding-left: 20px;">Bếp điện từ hồng ngoại Ferroli IC4200KS</li>
+                    <li style="padding-right: 95.89px; padding-left: 20px;">2</li>
+                    <li style="padding-right: 56.07px; padding-left: 20px;">3.490.000đ</li>
+                    <li style="padding-right: 62.81px; padding-left: 20px;">6.490.000đ</li>
+                    <li style="padding-right: 5px; padding-left: 20px; border-right: none;"><button style="height: 20px; width: 35px;background-color: red;color: white;">Xóa</button></li>
+                </ul>
+            </div>
+            <div class="SanPham" style="border-bottom:none;">
+                <ul>
+                    <li style="padding-right: 57.82px; padding-left: 20px;">2</li>
+                    <li style="padding-right: 200.07px; padding-left: 20px;"><img src="Images/TrangChu/giadungnhabep/noichienkhongdau.jpg" style="width:150px; height: 150px;"></li>
+                    <li style="padding-right: 40.09px; padding-left: 20px;">Nồi chiên không dầu Sunhouse 3 lít SHD4025B</li>
+                    <li style="padding-right: 95.89px; padding-left: 20px;">1</li>
+                    <li style="padding-right: 71.07px; padding-left: 20px;">990.000đ</li>
+                    <li style="padding-right: 77.81px; padding-left: 20px;">990.000đ</li>
+                    <li style="padding-right: 5px; padding-left: 20px; border-right: none;"><button style="height: 20px; width: 35px;background-color: red;color: white;">Xóa</button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="TongTien">
+            <ul>
+                <li style="float: left;">Tổng tiền:</li>
+                <li style="float: right;">7.480.000đ</li>
+            </ul>
+        </div>
+        <div class="XacNhan">
+            <div class="FormCheckbox">
+                <label for="Checkbox" class="CheckboxItem">
+                    <input type="checkbox" class="Checkbox" id="Checkbox">Tôi đồng ý với <a href="DieuKhoan.html"> Điều khoản</a>
+                </label>
+            </div>        
+            <ul>
+                <a href="Index.html"><li> < Quay lại trang chủ</li></a>
+                <a href="#"><li><img src="Images/TrangChu/icon6.png">Thanh toán</li></a>
+            </ul>
+        </div>
+    </div>
+    <div class="Footer">
+        <div class="Footer-info">
+            <ul>
+                <p>Gia dụng xanh HAT</p>
+                <li><a href="#"><img src="Images/TrangChu/icon9.png">Số 2 Lê Đức Thọ, Mai Dịch, Từ Liêm, Hà Nội</a></li>
+                <li><a href="#"><img src="Images/TrangChu/icon8.png">Hotline: 1800 6800</a></li>
+                <li><a href="#"><img src="Images/TrangChu/icon10.png">Email: giadungxanhHat@gmail.com</a></li>
+            </ul>
+        </div>
+        <div class="Footer-info">
+            <ul>
+                <p>Truy cập nhanh</p>
+                <li><a href="Index.html">> Trang chủ</a></li>
+                <li><a href="#">> Giới thiệu</a></li>
+                <li><a href="#">> Mua hàng</a></li>
+                <li><a href="#">> Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="Footer-info">
+            <ul>
+                <p>Follow us</p>
+                <li><a href="#"><img src="Images/TrangChu/icon11.png">Facebook</a></li>
+                <li><a href="#"><img src="Images/TrangChu/icon12.jpg">Twitter</a></li>
+                <li><a href="#"><img src="Images/TrangChu/icon13.webp">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

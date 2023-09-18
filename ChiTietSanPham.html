@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+
+    <style>
+        .Main{
+        font-size: 15px;
+        width: 1500px;
+        margin: 0 auto;
+        height: 700px;
+        }
+        .Header{
+            height: 150px;
+        }
+        .Header-top{
+            background-color: red;
+            height: 100px;
+            width: 100%;
+        }
+        .Header-top img{
+            height: 100px;
+            width: 180px;
+            padding-left: 100px;
+            float: left;
+        }
+        .Header-top ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .Header-top ul li {
+            list-style: none;
+            float: left;
+            padding-left: 25px;
+            padding-top: 40px;
+            font-size: 20px;
+        }
+        .Header-top ul li a{
+            text-decoration: none;
+            color: white;
+        }
+        .Header-top ul li img{
+            height: 27px;
+            width: 27px;
+            padding-right: 1px;
+            vertical-align: middle;
+        }
+        .Header-bottom-width{
+            font-size: 13px;
+            width: 1500px;
+            margin: 0px auto;           
+        }
+        .Search{
+            height: 40px;
+            width: 550px;
+            background-color: white;
+            float: left;
+            margin-top: 30px;
+            border-radius: 6px;
+        }
+        .Search input{
+            height: 20px;
+            width: 480px;
+            background-color: white;
+            padding-top: 12px;
+            border: none;
+            border-radius: 6px;
+        }
+        .Search button{
+            height: 40px;
+            width: 45px;
+            float: right;
+            background-color: orange;
+            border-radius: 6px;
+        }
+        .Search button img{
+            height: 30px;
+            width: 30px;
+            float: right;
+        }       
+        .Header-bottom{
+            background-color: white;
+            height: 50px;
+        }
+        .Header-bottom ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .Header-bottom ul li{
+            list-style: none;
+            float: left;
+            padding-right: 40px;
+            line-height: 40px;
+        }
+        .Header-bottom ul li a:hover{
+            color: red;
+        }
+        .Header-bottom ul li a{
+            text-decoration: none;
+            display: block;
+            color: black;
+        }
+        .Header-bottom ul li a.active{
+            background-color: black;
+            font-size: 15px;
+            color: white;
+            padding-right: 20px;
+        }
+        .Header-bottom ul li img{
+            width: 20px;
+            height: 20px;
+            padding-right: 2px;
+            line-height: 0px;
+            vertical-align: middle;
+        }
+        .Left{
+            height: 500px;
+            width: 50%;
+            float: left;
+        }
+        .Left img{
+            height: 300px;
+            width: 60%;
+            padding-left: 70px;
+        }
+        .Right{
+            height: 450px;
+            width: 50%;
+            float: left;
+        }
+        .ChiTiet li{
+            float: left;
+            list-style: none;   
+            padding: 2px; 
+            font-size: 15px;
+        }
+        .ChiTiet a{
+            text-decoration: none;
+        }
+        .TieuDe p{
+            font-size: 20px;
+            font-weight: bold;
+            padding-bottom: 30px;
+            border-bottom: 00.5px solid #cccccc;
+        }
+        .TieuDe p1{
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .GiamGia{
+            height: 50px;
+            width: 100%;
+            margin-bottom: 70px;
+        }
+        .GiamGia-left{
+            height: 80px;
+            width: 250px;
+            float: left;
+            padding-top: 20px;
+            border-right: 0.5px solid #cccccc;
+        }
+        .GiamGia-left ul{
+            padding: 0px;
+            margin: 0px;
+        }
+        .GiamGia-right{
+            height: 30px;
+            width: 270px;
+            float: left;
+            margin-left: 50px;
+            margin-top: 20px;
+            border: 0.5px solid red;
+            border-radius: 5px;
+        }
+        .GiamGia-right img{
+            height: 30px;
+            width: 30px;
+            float: left;
+            vertical-align: middle;
+        }
+        .GiamGia-right p{
+            color: red;
+            float: left;
+            font-size: 14px;
+            text-align: center;
+            margin: 0px;
+            padding-top: 8px;
+        }
+        .Right-bottom{
+            height: 70px;
+            width: 80%;
+            background-color: red;
+            margin: 0 auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .Right-bottom a{
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+        .Right-bottom p{
+            font-size: 20px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .Right-bottom-left{
+            height: 50px;
+            width: 290px;
+            float: left;
+            border: 00.5px solid red;
+            border-radius: 5px;
+            margin-left: 75px;
+            margin-right: 16px;
+        }
+        .Right-bottom-left a{
+            text-decoration: none;
+            color: red;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 10px;
+        }
+        .Right-bottom-left a:hover{
+            color: white;
+        }
+        .Right-bottom-right a{
+            text-decoration: none;
+            color: red;
+            font-size: 16px;
+            text-align: center;
+            padding-top: 10px;
+        }
+        .Right-bottom-right{
+            height: 50px;
+            width: 290px;
+            float: left;
+            border: 00.5px solid red;
+            border-radius: 5px;
+        }
+        .Right-bottom-right a:hover{
+            color: white;
+        }
+        .Right-bottom-left:hover{
+            background-color: red;
+        }
+        .Right-bottom-right:hover{
+            background-color: red;
+        }
+        .Footer{
+            width: 100%;
+            height: 200px;
+            background-color: red;
+        }
+        .Footer-info{
+            float: left;
+        }
+        .Footer-info img{
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            padding-right: 15px;
+        }
+        .Footer-info p{
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            padding-left: 300px;
+        }
+        .Footer-info ul a{
+            text-decoration: none;
+            color: white;
+        }
+        .Footer-info ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .Footer-info ul li{
+            list-style: none;
+            padding-bottom: 10px;
+            padding-left: 300px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="Header">
+        <div class="Header-top">
+            <a href="Index.html"><img src="Images/TrangChu/logo.png"></a>
+            <div class="Search">
+                <input type="" name="" placeholder="Bạn cần tìm gì hôm nay?">
+                <button>
+                    <img src="Images/TrangChu/icon-search.webp">
+                </button>
+            </div>
+            <ul>
+                <li><a href="GioHang.html" title="Giỏ hàng"><img src="Images/TrangChu/icon6.png">Giỏ hàng</a><li>
+                <li><a href="DangNhap.html" title="Tài khoản"><img src="Images/TrangChu/icon7.png">Tài khoản</a></li>
+                <li><a href="#" title="Hotline"><img src="Images/TrangChu/icon8.png">Hotline: 1800 6800 (Miễn phí)<br>Mua hàng - Góp ý - Bảo hành</a></li>
+            </ul>
+        </div>
+        <div class="Header-bottom Header-bottom-width" >
+            <ul>
+                <li><a href="#" title="Danh mục sản phẩm" class="active"><img src="Images/TrangChu/icon1.webp">Danh mục sản phẩm</a></li>
+                <li><a href="#" title="Miễn phí giao lắp"><img src="Images/TrangChu/icon2.webp">Miễn phí giao lắp</a></li>
+                <li><a href="#" title="Cẩm nang khuyến mãi"><img src="Images/TrangChu/icon3.webp">Cẩm nang khuyến mãi</a></li>
+                <li><a href="MuaHangOnline.html" title="Hướng dẫn mua hàng online"><img src="Images/TrangChu/icon4.webp">Hướng dẫn mua hàng online</a></li>
+                <li><a href="#" title="Thương hiệu nổi bật"><img src="Images/TrangChu/icon5.webp">Thương hiệu nổi bật</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="Main">
+        <div class="Left">
+            <img src="Images/TrangChu/sanphambanchay/bepdientu.jpg">
+            <p style="font-size: 20px; font-weight: bold;">Đặc điểm nổi bật</p>
+            <p1 style="font-size: 17px;">• Mặt kính Ceramic sáng bóng, chịu lực, khó bị nứt vỡ</p1>
+            <p2 style="font-size: 17px;"><br>• 9 cấp độ nấu phù hợp với mục đích sử dụng khác nhau</p2>
+            <p3 style="font-size: 17px;"><br>• 2 vùng bếp nấu công suất cao 2000W và 2300W</p3>
+            <p4 style="font-size: 17px;"><br>• Điều khiển kiểu trượt giúp thao tác nhanh chóng</p4>
+            <p5 style="font-size: 17px;"><br>• Thiết kế sang trọng, tôn lên vẻ hiện đại cho căn bếp</p5>
+        </div>
+        <div class="Right">
+            <ul class="ChiTiet">
+                <li><a href="Index.html" style="color: gray;">Trang chủ</a></li>
+                <li style="color: gray;">></li>
+                <li><a href="#" style="color: gray;">Bếp điện</a></li>
+                <li style="color: gray;">></li>
+                <li><a href="#" style="color: black;">Feroli</a></li>
+            </ul>
+            <div class="TieuDe">
+                <p><br>Bếp điện từ hồng ngoại Ferroli IC4200KS</p>
+                <p1>3.490.000đ</p1>
+            </div>
+            <div class="GiamGia">
+                <div class="GiamGia-left">
+                    <ul>
+                        <li style="float: left;height: 25px; width: 60px; background-color: red; border-radius: 5px; display: block; color: white; text-align: center; padding-top: 8px; font-size: 16px;">60%</li>
+                        <li style="color: gray; text-decoration: line-through; float: left; font-size: 18px; list-style: none; padding-top: 12px; padding-left: 16px;">8.800.000đ</li>
+                    </ul>
+                </div>
+                <div class="GiamGia-right">
+                    <a href="#">
+                        <img src="Images/TrangChu/icon14.jpg">
+                        <p>Mua Online giảm thêm đến 1.000.000đ</p>
+                    </a>
+                </div>
+            </div>
+            <div class="Right-bottom">
+                <a href="#">
+                    <p style="padding-top: 4px;">MUA NGAY</p>
+                    <p>Giao hàng tận nơi</p>
+                </a>
+            </div>
+            <div class="Right-bottom-left">
+                <a href="#"><p>THÊM VÀO GIỎ HÀNG</p></a>
+            </div>
+            <div class="Right-bottom-right">
+                <a href="#">
+                    <p style="font-weight: bold; margin: 0px;">MUA TRẢ GÓP</p>
+                    <p>Chỉ có 581.667đ/tháng (6 tháng)</p>
+                </a>
+            </div>
+        </div>
+        <p style="font-size: 16px; text-align: center;"><br>Gọi đặt mua <a href="#" style="font-size: 20px; font-weight: bold; text-decoration: none; color: blue;">1800 6800</a> (8h - 12h)</p>
+    </div>
+    <div class="Footer">
+        <div class="Footer-info">
+            <ul>
+                <p>Gia dụng xanh HAT</p>
+                <li><a href="#"><img src="Images/TrangChu/icon9.png">Số 2 Lê Đức Thọ, Mai Dịch, Từ Liêm, Hà Nội</a></li>
+                <li><a href="#"><img src="Images/TrangChu/icon8.png">Hotline: 1800 6800</a></li>
+                <li><a href="#"><img src="Images/TrangChu/icon10.png">Email: giadungxanhHat@gmail.com</a></li>
+            </ul>
+        </div>
+        <div class="Footer-info">
+            <ul>
+                <p>Truy cập nhanh</p>
+                <li><a href="#">> Trang chủ</a></li>
+                <li><a href="#">> Giới thiệu</a></li>
+                <li><a href="#">> Mua hàng</a></li>
+                <li><a href="#">> Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="Footer-info">
+            <ul>
+                <p>Follow us</p>
+                <li><a href="#"><img src="Images/TrangChu/icon11.png">Facebook</a></li>
+                <li><a href="#"><img src="Images/TrangChu/icon12.jpg">Twitter</a></li>
+                <li><a href="#"><img src="Images/TrangChu/icon13.webp">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
